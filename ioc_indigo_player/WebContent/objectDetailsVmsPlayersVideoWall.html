@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html dir="ltr">
+<head>
+	<meta charset="UTF-8" />
+	<!--script type="text/javascript">
+		var djConfig = {
+			async : true,
+			parseOnLoad : true,
+			dojoBlankHtmlUrl: 'blank.html',
+			//packages: [],
+			baseUrl: '/milsng/',
+			packages: [{name:'dojo',  location: 'dojojs/dojo/'},
+					   {name:'dijit', location: 'dojojs/dijit'},
+					   {name:'iv',    location: 'vms/IndigoVision15/iv'}]
+		}
+	</script-->
+	<!--script src="/milsng/dojojs/dojo/dojo.js" baseurl="./"></script>
+	<script type="text/javascript" src="/milsng/js/uihelper.js"></script-->
+	<script type="text/javascript" src="milsFramework.js"></script>
+	<script type="text/javascript" src="ivVmsPlayersVideoWall.js"></script>
+
+	<!--script type="text/javascript">
+		require(["dojo/dom", "dojo/_base/window", "milsng/vms/vmsutils", "iv/vmsArchivePlayerControls","iv/vmsLivePlayerControls", "dojo/domReady!"], function(dom, win, vmsUtils, vmsArchivePlayerControls, vmsLivePlayerControls){
+			if (vmsUtils.isIE()) {
+				registerContext();
+				ivInit();
+				
+				var archiveCtrl = new vmsArchivePlayerControls({}, "archiveControlsDivNode")
+				archiveCtrl.startup();
+				
+				var liveCtrl = new vmsLivePlayerControls({}, "liveControlsDivNode")
+				liveCtrl.startup();	
+			} else {
+				vmsUtils.createStaticIVAPlayer(win.body(), null);
+			}		
+		});
+	</script-->
+
+	<style type="text/css">
+		html, body, object {
+			width:100%;
+			height:100%;
+			padding:0px;
+			margin:0px;
+			border:0px;
+			overflow-y:hidden;
+			background:#000000;
+		}
+		
+		.uiProxy {
+			display:none;
+		}
+		
+		.archivePlayer {
+			height:500px;
+            width:500px;
+            vertical-align: text-top;
+            
+		}
+		
+		.livePlayer {
+			height:300px;
+            width:366px;
+		}		
+		
+		.outerTopContainer {
+			position:absolute; 
+			top:10px; 
+			bottom:60px;
+			left:0px
+			width:100%;
+		}
+		
+		.outerBottomContainer {
+			height:60px; 
+			position:absolute; 
+			bottom:0px; 
+			width:100%; 
+			float:none;
+		}
+		
+		.innerTopContainer {
+			position:absolute; 
+			top:0px; 
+			bottom:22px; 
+			width:100%;
+		}
+		
+		.innerBottomContainer {
+			height:22px; 
+			position:absolute; 
+			bottom:0px; 
+			width:100%; 
+		}
+		
+		.archiveControlContainer {
+			margin:auto; 
+			width:220px;
+		}
+		
+		.liveControlContainer {
+			margin:auto; 
+			width:72px;
+		}
+	</style>
+
+
+	<!--script for='videoPlayer' event='StreamConnected'>
+      onStreamConnected();
+    </script>
+	<script for='videoPlayer' event='PlaybackStarted'>
+      onPlaybackStarted();
+    </script>
+	<script for='videoPlayer' event='StreamError'>
+      onStreamError();
+    </script>
+	<script for='videoPlayer' event='StreamDisconnected'>
+      onStreamDisconnected();
+    </script>
+	<script for='videoPlayer' event='StreamStarted'>
+      onStreamStarted();
+    </script>
+	<script for='videoPlayer' event='StreamStateChanged'>
+      onStreamStateChanged();
+    </script-->
+	
+</head>
+
+<body>
+
+	<div id="archiveTopDivNode">
+		<table border="1">
+			<tr>
+				<td>
+					<select id="partList" style="width:366px" onChange="switchPartPlayback();"></select>
+				</td>
+			</tr>
+			
+			
+		
+			<tr>
+				<td border="3">
+					<object id="ivVideoControl" classid="clsid:5EF40891-9BB3-40B4-94EE-D73C290E3399" codebase ="ControlCenterVideoSDK.cab" class="archivePlayer" ></object>
+					
+				</td>
+			</tr>
+
+			<!--input type=button ID="StartPlayback" value="Start Playback" onclick="startPlayBack();" />
+	        <input type=button ID="StopPlayback" value="Stop Playback" onclick="ivStop();" />
+	        <input type=button ID="StartLiveVideo" value="Live Video" onclick="ivStartLive();" /-->
+		</table>
+	</div>
+	
+	
+		
+	
+	
+</body>
+</html>

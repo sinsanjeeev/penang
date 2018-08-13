@@ -1,0 +1,32 @@
+<html>
+<body>
+
+<p>Click the button to open a new browser window.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+var play;
+function myFunction() {
+    play=window.open("objectDetailsVmsPlayers.html","","width=600,height=600");
+    setTimeout(playRec, 3000);
+    
+}
+
+function playRec(){
+var obj={
+	"vmsServer":"192.168.8.38",
+    "archiveParms":"camSVCID=uuid:2a371e86-6251-496d-9b93-d4476d32ff80",
+    "vmsMode":"archive",
+	"playbackStartTicks":1533061800000,
+	"vmsUserId":"Admin",
+	"vmsPassword":"1234",
+	"preRollTime":30
+	
+	}
+    play.ivSetPlayerContext(obj)
+}
+</script>
+
+</body>
+</html>
